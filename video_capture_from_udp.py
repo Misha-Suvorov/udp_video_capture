@@ -66,3 +66,4 @@ while True:
 cap.release()
 out.release()
 cv2.destroyAllWindows()
+print("video successfully captured into: ", filename)

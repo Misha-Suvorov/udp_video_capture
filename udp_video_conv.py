@@ -10,7 +10,7 @@ output_file = "output_video.mp4"  # out file
 
 # open udp 
 #cap = cv2.VideoCapture(1)
-cap = sock = cv2.VideoCapture(f"udp://{udp_ip}:{udp_port}")
+cap = cv2.VideoCapture(f"udp://{udp_ip}:{udp_port}")
 
 
 if not cap.isOpened():
