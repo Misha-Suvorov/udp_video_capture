@@ -13,9 +13,7 @@ def dump_buffer(s):
     """ Emptying buffer frame """
     while True:
         seg, addr = s.recvfrom(MAX_DGRAM)
-        print(seg[0])
         if struct.unpack("B", seg[0:1])[0] == 1:
-            print("finish emptying buffer")
             break
 
 def main():
@@ -30,10 +28,10 @@ def main():
 
     # Generate filename with current date and time
     timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
-    filename = f'output_{timestamp}.mp4'
+    filename = f'output_{timestamp}.mp4'  # Changed to .avi
 
     # Variables for VideoWriter
-    fourcc = cv2.VideoWriter_fourcc(*'H264')  # Codec for H.264 video
+    fourcc = cv2.VideoWriter_fourcc(*'XVID')  # Codec for XVID video
     out = None
     frame_size = None
     frame_rate = 30  # You can adjust the frame rate if needed
