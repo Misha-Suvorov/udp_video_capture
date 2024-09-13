@@ -44,9 +44,10 @@ def get_video_type(filename):
     return VIDEO_TYPE['mp4']
 
 
-udp_ip = "127.0.0.1"  # IP
-udp_port = 5600       # Port
+udp_ip = "192.168.1.3"  # IP
+udp_port = 9999       # Port
 cap = cv2.VideoCapture(f"udp://{udp_ip}:{udp_port}")
+#cap = cv2.VideoCapture(1)
 if not cap.isOpened():
     print("Не вдалося відкрити відео потік.")
     exit()
